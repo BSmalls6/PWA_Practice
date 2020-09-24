@@ -12,13 +12,19 @@ function App() {
 };
     fetchData();
 
-    });
+    }, []);
     return ( 
     
     <div className = "App" >
         <header>
             <h1>Videos</h1> 
         </header>
+        {data.map(video=>(
+            <div>
+                <h2>{video.name}</h2>
+                <video height={200} controls src={video.video_url} />
+            </div>
+        ))}
     </div>
     );
 }
